@@ -238,6 +238,252 @@
         height: auto;
         display: block;
       }
+
+      /* Buy Me A Coffee Button & Modal */
+      .nav-right-cluster {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        pointer-events: auto;
+      }
+
+      .coffee-btn {
+        pointer-events: auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.45rem 0.95rem;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.12);
+        color: #ffffff;
+        font-family: inherit;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        cursor: pointer;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        text-decoration: none;
+        user-select: none;
+      }
+
+      .coffee-btn:hover {
+        background: #ffffff;
+        color: #000000;
+        border-color: #ffffff;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
+      }
+
+      .coffee-btn svg {
+        width: 14px;
+        height: 14px;
+        transition: transform 0.3s ease;
+      }
+
+      .coffee-btn:hover svg {
+        transform: rotate(-10deg) scale(1.1);
+      }
+
+      @media screen and (max-width: 479px) {
+        .coffee-btn span {
+          display: inline;
+        }
+        .coffee-btn {
+          padding: 0.35rem 0.7rem;
+          font-size: 0.7rem;
+        }
+      }
+
+      /* Coffee Modal Overlay */
+      .coffee-modal-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 999999;
+        background: rgba(0, 0, 0, 0.82);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.25rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .coffee-modal-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .coffee-modal-card {
+        background: #0d0d0d;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 1.5rem;
+        padding: 2rem 2rem 2.25rem;
+        max-width: 380px;
+        width: 100%;
+        color: #ffffff;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08);
+        transform: scale(0.92) translateY(20px);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        position: relative;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .coffee-modal-overlay.active .coffee-modal-card {
+        transform: scale(1) translateY(0);
+      }
+
+      .coffee-close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #ffffff;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      .coffee-close-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.08);
+      }
+
+      .coffee-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #ffd166;
+        background: rgba(255, 209, 102, 0.12);
+        border: 1px solid rgba(255, 209, 102, 0.25);
+        padding: 0.3rem 0.75rem;
+        border-radius: 9999px;
+        margin-bottom: 0.75rem;
+        font-weight: 600;
+      }
+
+      .coffee-modal-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.35rem;
+      }
+
+      .coffee-modal-sub {
+        font-size: 0.825rem;
+        color: #999999;
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
+      }
+
+      .coffee-qr-wrapper {
+        background: #ffffff;
+        padding: 0.9rem;
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1.25rem;
+      }
+
+      .coffee-qr-img {
+        width: 190px;
+        height: 190px;
+        display: block;
+        border-radius: 0.5rem;
+      }
+
+      .coffee-upi-row {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 0.75rem;
+        padding: 0.6rem 0.85rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .coffee-upi-text {
+        font-family: 'IBM Plex Mono', monospace, sans-serif;
+        font-size: 0.85rem;
+        color: #ffffff;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .coffee-copy-btn {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+        padding: 0.35rem 0.65rem;
+        border-radius: 0.5rem;
+        font-size: 0.72rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        flex-shrink: 0;
+      }
+
+      .coffee-copy-btn:hover {
+        background: #ffffff;
+        color: #000000;
+      }
+
+      .coffee-pay-direct-btn {
+        width: 100%;
+        background: #ffffff;
+        color: #000000;
+        padding: 0.75rem 1rem;
+        border-radius: 9999px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        text-decoration: none;
+      }
+
+      .coffee-pay-direct-btn:hover {
+        background: #e5e5e5;
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+      }
     </style>
   </div>
   <nav delay="1.5" opacity="" no-scroll="" class="nav-boiler"><a href="/" aria-current="page"
@@ -269,20 +515,32 @@
           d="M2083.40 292.44Q2046.75 292.44 2017.70 280.35Q1988.65 268.26 1972.07 245.45Q1955.50 222.64 1955.50 191.45L2026.47 191.45Q2026.47 214.45 2041.87 225.18Q2057.27 235.90 2082.62 235.90Q2101.73 235.90 2111.86 229.08Q2122 222.25 2122 210.94Q2122 200.42 2115.18 193.79Q2108.35 187.16 2097.24 182.67Q2086.13 178.19 2064.68 171.95L2055.71 169.22Q2027.25 160.64 2007.75 150.89Q1988.26 141.15 1976.17 125.16Q1964.08 109.17 1964.08 85.78Q1964.08 42.49 1993.71 21.83Q2023.35 1.16 2071.70 1.16Q2104.45 1.16 2130.97 12.27Q2157.49 23.39 2173.28 43.86Q2189.07 64.33 2189.85 92.01L2118.88 92.01Q2116.54 76.03 2104.26 66.86Q2091.98 57.70 2071.70 57.70Q2055.32 57.70 2045.58 63.35Q2035.83 69.01 2035.83 80.71Q2035.83 89.68 2041.09 95.72Q2046.36 101.76 2056.69 106.05Q2067.02 110.34 2086.91 116.19Q2123.17 127.11 2143.84 135.69Q2164.50 144.27 2179.13 160.84Q2193.75 177.41 2193.75 204.31Q2193.75 230.83 2180.69 250.72Q2167.62 270.60 2142.67 281.52Q2117.71 292.44 2083.40 292.44"
           fill="currentColor"></path>
       </svg></a>
-    <div class="menu-w">
-      <div class="menu-btn">
-        <div class="menu-btn-text">menu</div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 6 6"
-          fill="none" class="menu-svg">
-          <rect y="4" width="2" height="2" fill="currentColor"></rect>
-          <rect x="4" y="4" width="2" height="2" fill="currentColor"></rect>
-          <rect width="2" height="2" fill="currentColor"></rect>
-          <rect x="4" width="2" height="2" fill="currentColor"></rect>
+    <div class="nav-right-cluster">
+      <button type="button" id="buy-coffee-btn" class="coffee-btn" aria-label="Buy me a coffee">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+          <line x1="6" y1="1" x2="6" y2="4"></line>
+          <line x1="10" y1="1" x2="10" y2="4"></line>
+          <line x1="14" y1="1" x2="14" y2="4"></line>
         </svg>
+        <span>Buy me a coffee</span>
+      </button>
+      <div class="menu-w">
+        <div class="menu-btn">
+          <div class="menu-btn-text">menu</div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 6 6"
+            fill="none" class="menu-svg">
+            <rect y="4" width="2" height="2" fill="currentColor"></rect>
+            <rect x="4" y="4" width="2" height="2" fill="currentColor"></rect>
+            <rect width="2" height="2" fill="currentColor"></rect>
+            <rect x="4" width="2" height="2" fill="currentColor"></rect>
+          </svg>
+        </div>
+        <div class="menu-links-w"><a href="#about" data-taxi-ignore class="link-boiler">About</a><a href="#works"
+            data-taxi-ignore class="link-boiler">Works</a><a href="#intro" data-taxi-ignore
+            class="link-boiler">Intro</a><a href="#faq" data-taxi-ignore class="link-boiler">FAQ</a><a href="#footer"
+            data-taxi-ignore class="link-boiler">Contact</a></div>
       </div>
-      <div class="menu-links-w"><a href="#about" data-taxi-ignore class="link-boiler">About</a><a href="#works"
-          data-taxi-ignore class="link-boiler">Works</a><a href="#intro" data-taxi-ignore
-          class="link-boiler">Intro</a><a href="#faq" data-taxi-ignore class="link-boiler">FAQ</a><a href="#footer"
-          data-taxi-ignore class="link-boiler">Contact</a></div>
     </div>
   </nav>
   <div class="menu_wrapper">
@@ -1152,8 +1410,135 @@
           toast.style.transform = 'translateX(-50%) translateY(20px)';
         }, 3200);
       }
+
+      // Buy Me A Coffee Modal Handler
+      const coffeeModalOverlay = document.getElementById('coffee-modal');
+      const coffeeOpenBtn = document.getElementById('buy-coffee-btn');
+      const coffeeCloseBtn = document.getElementById('coffee-close-btn');
+      const coffeeCopyBtn = document.getElementById('coffee-copy-btn');
+      const coffeeCopyText = document.getElementById('coffee-copy-text');
+
+      function openCoffeeModal() {
+        if (!coffeeModalOverlay) return;
+        coffeeModalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeCoffeeModal() {
+        if (!coffeeModalOverlay) return;
+        coffeeModalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (coffeeOpenBtn) {
+        coffeeOpenBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          openCoffeeModal();
+        });
+      }
+
+      if (coffeeCloseBtn) {
+        coffeeCloseBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          closeCoffeeModal();
+        });
+      }
+
+      if (coffeeModalOverlay) {
+        coffeeModalOverlay.addEventListener('click', function (e) {
+          if (e.target === coffeeModalOverlay) {
+            closeCoffeeModal();
+          }
+        });
+      }
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && coffeeModalOverlay && coffeeModalOverlay.classList.contains('active')) {
+          closeCoffeeModal();
+        }
+      });
+
+      if (coffeeCopyBtn) {
+        coffeeCopyBtn.addEventListener('click', function () {
+          const upiId = '9010862353@ybl';
+          navigator.clipboard.writeText(upiId).then(function () {
+            if (coffeeCopyText) {
+              const orig = coffeeCopyText.textContent;
+              coffeeCopyText.textContent = 'Copied!';
+              coffeeCopyBtn.style.background = '#0ba954';
+              coffeeCopyBtn.style.borderColor = '#0ba954';
+              setTimeout(function () {
+                coffeeCopyText.textContent = orig;
+                coffeeCopyBtn.style.background = '';
+                coffeeCopyBtn.style.borderColor = '';
+              }, 2200);
+            }
+          }).catch(function () {
+            // Fallback copy
+            const textarea = document.createElement('textarea');
+            textarea.value = upiId;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            if (coffeeCopyText) {
+              coffeeCopyText.textContent = 'Copied!';
+              setTimeout(() => { coffeeCopyText.textContent = 'Copy'; }, 2000);
+            }
+          });
+        });
+      }
     });
   </script>
+
+  <!-- Buy Me A Coffee Modal -->
+  <div id="coffee-modal" class="coffee-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="coffee-modal-title">
+    <div class="coffee-modal-card">
+      <button type="button" id="coffee-close-btn" class="coffee-close-btn" aria-label="Close modal">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="coffee-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+        </svg>
+        <span>Support My Work</span>
+      </div>
+
+      <h3 id="coffee-modal-title" class="coffee-modal-title">Buy Me a Coffee</h3>
+      <p class="coffee-modal-sub">Scan the QR code using any UPI app (Google Pay, PhonePe, Paytm) to send support directly.</p>
+
+      <div class="coffee-qr-wrapper">
+        <img class="coffee-qr-img"
+          src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&format=svg&data=upi%3A%2F%2Fpay%3Fpa%3D9010862353%40ybl%26pn%3DCHIDVIELAS%26cu%3DINR"
+          alt="UPI QR Code for 9010862353@ybl"
+          loading="lazy" />
+      </div>
+
+      <div class="coffee-upi-row">
+        <span class="coffee-upi-text" title="9010862353@ybl">9010862353@ybl</span>
+        <button type="button" id="coffee-copy-btn" class="coffee-copy-btn" aria-label="Copy UPI ID">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span id="coffee-copy-text">Copy</span>
+        </button>
+      </div>
+
+      <a href="upi://pay?pa=9010862353@ybl&pn=CHIDVIELAS&cu=INR" class="coffee-pay-direct-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span>Pay with UPI App</span>
+      </a>
+    </div>
+  </div>
 
 
 
