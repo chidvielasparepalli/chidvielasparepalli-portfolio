@@ -1,0 +1,23 @@
+{
+  "name": "chidvielas-portfolio",
+  "version": "1.0.0",
+  "description": "CHIDVIELAS - Creative Developer & AI Engineer Portfolio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "serve": "node server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "webgl",
+    "gsap",
+    "creative-developer",
+    "threejs"
+  ],
+  "author": "Chidvielas Parepalli",
+  "license": "ISC",
+  "dependencies": {
+    "opentype.js": "^2.0.0",
+    "wawoff2": "^2.0.1"
+  }
+}
