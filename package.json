@@ -4,6 +4,7 @@
   "description": "CHIDVIELAS - Creative Developer & AI Engineer Portfolio",
   "main": "server.js",
   "scripts": {
+    "dev": "node server.js",
     "start": "node server.js",
     "serve": "node server.js"
   },
